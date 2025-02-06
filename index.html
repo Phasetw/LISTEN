@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What did we listen to?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #111;
+            color: white;
+            margin-top: 100px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        #response, #secondInputContainer, #finalResponse {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>What did we listen to?</h1>
+    <input type="text" id="firstAnswer" placeholder="Type your answer">
+    <button onclick="checkFirstAnswer()">Submit</button>
+    <div id="response"></div>
+    
+    <div id="secondInputContainer">
+        <input type="text" id="secondAnswer" placeholder="Type your answer">
+        <button onclick="checkSecondAnswer()">Submit</button>
+    </div>
+    
+    <div id="finalResponse"></div>
+    
+    <script>
+        function checkFirstAnswer() {
+            var input = document.getElementById("firstAnswer").value.trim().toLowerCase();
+            if (input === "prune, you talk funny") {
+                document.getElementById("response").innerText = "Watch. Listen. Wait. Then I'll tell you.";
+                document.getElementById("response").style.display = "block";
+                document.getElementById("secondInputContainer").style.display = "block";
+            } else {
+                alert("You've Been Here Before, Haven't You?");
+            }
+        }
+        
+        function checkSecondAnswer() {
+            var input = document.getElementById("secondAnswer").value.trim().toLowerCase();
+            if (input === "home") {
+                document.getElementById("finalResponse").innerText = "I always listen to music on the drives home. It keeps me calm and keeps me in my own head. In the quiet of a shared moment, Truth Emerges Heavy and Cold.";
+                document.getElementById("finalResponse").style.display = "block";
+            } else {
+                alert("You've Been Here Before, Haven't You?");
+            }
+        }
+    </script>
+</body>
+</html>
